@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://pokedex-josualdo.vercel.app/imagens/icon.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <main>
+      <h1>Pokédex</h1>
+      <div class="wrapper" id="wrapper">
+        <div class="container">
+          <div class="header">
+            <div class="scanner">
+              <div class="glass shine"></div>
+            </div>
+
+            <div class="light-container">
+              <div class="light red shine"></div>
+              <div class="light yellow shine"></div>
+              <div class="light green shine"></div>
+            </div>
+          </div>
+
+          <div class="body">
+            <div class="inner">
+              <div class="screen-border">
+                <div class="leds">
+                  <div class="led red"></div>
+                  <div class="led red"></div>
+                </div>
+                <div class="screen"></div>
+                <div class="screen-bottom">
+                  <div class="led red led-bottom shine"></div>
+                  <div class="sound-out"></div>
+                </div>
+              </div>
+              <div class="footer">
+                <div class="left">
+                  <div class="buttons">
+                    <button
+                      type="button"
+                      onclick="power()"
+                      class="circle-button"
+                    ></button>
+                    <div class="line-buttons">
+                      <div class="line-button red"></div>
+                      <div class="line-button blue"></div>
+                    </div>
+                  </div>
+                  <div class="mini-display">
+                    <span class="pokemon-name">Bulbassaur</span>
+                  </div>
+                </div>
+                <div class="cross-button">
+                  <div class="cross up"></div>
+                  <div class="middle">
+                    <div class="cross left"></div>
+                    <div class="cross center"></div>
+                    <div class="cross right"></div>
+                  </div>
+                  <div class="cross down"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="cover" class="cover" onclick="openClose()">
+          <div class="body">
+            <div class="arrow"></div>
+            <div class="bevel"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const cover = document.getElementById("cover");
+      const wrapper = document.getElementById("wrapper");
+
+      function openClose() {
+        if (cover.classList.contains("open")) {
+          closeCover();
+          return;
+        }
+
+        openCover();
+      }
+
+      function openCover() {
+        cover.classList.add("open");
+
+        setTimeout(() => {
+          powerOn();
+        }, 500);
+      }
+
+      function closeCover() {
+        if (isPower()) {
+          powerOff();
+          setTimeout(() => {
+            cover.classList.remove("open");
+          }, 500);
+          return;
+        }
+
+        cover.classList.remove("open");
+      }
+
+      function isPower() {
+        return wrapper.classList.contains("on");
+      }
+
+      function power() {
+        if (isPower()) {
+          powerOff();
+          return;
+        }
+
+        powerOn();
+      }
+
+      function powerOn() {
+        wrapper.classList.add("on");
+      }
+
+      function powerOff() {
+        wrapper.classList.remove("on");
+      }
+    </script>
+  </body>
+</html>
