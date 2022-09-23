@@ -8,13 +8,13 @@
       rel="icon"
       href="https://pokedex-josualdo.vercel.app/imagens/icon.png"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Pokedex</title>
   </head>
   <body>
     <main>
       <h1>Pokédex</h1>
-      <div class="wrapper" id="wrapper">
+      <div class="pokedex open on" id="pokedex">
         <div class="container">
           <div class="header">
             <div class="scanner">
@@ -35,37 +35,50 @@
                   <div class="led red"></div>
                   <div class="led red"></div>
                 </div>
-                <div class="screen"></div>
+
+                <div class="screen">
+                  <div class="about hidden" id="about">
+                    Desenvolvido por
+                    <a target="_blank" href="https://github.com/npsouza"
+                      >@npsouza</a
+                    >
+                  </div>
+                  <div class="pokemon" id="pokemon-wrapper-image">
+                    <img alt="Pokemon" id="pokemon-image" />
+                  </div>
+                </div>
+
                 <div class="screen-bottom">
                   <div class="led red led-bottom shine"></div>
                   <div class="sound-out"></div>
                 </div>
               </div>
+
               <div class="footer">
                 <div class="left">
                   <div class="buttons">
-                    <button
-                      type="button"
-                      onclick="power()"
-                      class="circle-button"
-                    ></button>
+                    <button onclick="power()" class="circle-button"></button>
                     <div class="line-buttons">
-                      <div class="line-button red"></div>
-                      <div class="line-button blue"></div>
+                      <button class="line-button red"></button>
+                      <button
+                        onclick="toggleAbout()"
+                        class="line-button blue"
+                      ></button>
                     </div>
                   </div>
                   <div class="mini-display">
-                    <span class="pokemon-name">Bulbassaur</span>
+                    <span class="pokemon-name" id="pokemon-name"></span>
                   </div>
                 </div>
+
                 <div class="cross-button">
-                  <div class="cross up"></div>
+                  <button class="cross up"></button>
                   <div class="middle">
-                    <div class="cross left"></div>
-                    <div class="cross center"></div>
-                    <div class="cross right"></div>
+                    <button class="cross left" onclick="prev()"></button>
+                    <div class="center"></div>
+                    <button class="cross right" onclick="next()"></button>
                   </div>
-                  <div class="cross down"></div>
+                  <button class="cross down"></button>
                 </div>
               </div>
             </div>
@@ -81,59 +94,7 @@
       </div>
     </main>
 
-    <script>
-      const cover = document.getElementById("cover");
-      const wrapper = document.getElementById("wrapper");
-
-      function openClose() {
-        if (cover.classList.contains("open")) {
-          closeCover();
-          return;
-        }
-
-        openCover();
-      }
-
-      function openCover() {
-        cover.classList.add("open");
-
-        setTimeout(() => {
-          powerOn();
-        }, 500);
-      }
-
-      function closeCover() {
-        if (isPower()) {
-          powerOff();
-          setTimeout(() => {
-            cover.classList.remove("open");
-          }, 500);
-          return;
-        }
-
-        cover.classList.remove("open");
-      }
-
-      function isPower() {
-        return wrapper.classList.contains("on");
-      }
-
-      function power() {
-        if (isPower()) {
-          powerOff();
-          return;
-        }
-
-        powerOn();
-      }
-
-      function powerOn() {
-        wrapper.classList.add("on");
-      }
-
-      function powerOff() {
-        wrapper.classList.remove("on");
-      }
-    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/list.js"></script>
   </body>
 </html>

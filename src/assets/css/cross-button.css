@@ -1,0 +1,88 @@
+.cross-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-top: 8px;
+}
+
+.middle {
+  display: flex;
+}
+
+.cross,
+.center {
+  width: 30px;
+  height: 30px;
+  background: var(--button-bg);
+  border-color: #000;
+  border-style: solid;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center::before,
+.cross::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}
+
+.center {
+  border-width: 0;
+  width: 26px;
+  box-shadow: 3px 3px 0 0 #111;
+  position: relative;
+}
+
+.center::before {
+  width: 15px;
+  height: 15px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0;
+  border-radius: 100%;
+  border: 0;
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+.cross.up {
+  border-width: 2px 2px 0 2px;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 3px 1px 0 0 #111;
+}
+.cross.up::before {
+  border-bottom: 12px solid rgba(0, 0, 0, 0.3);
+}
+.cross.down {
+  border-width: 0 2px 2px 2px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 3px 3px 0 0 #111;
+}
+.cross.down::before {
+  border-top: 12px solid rgba(0, 0, 0, 0.3);
+}
+.cross.left {
+  border-width: 2px 0 2px 2px;
+  border-radius: 4px 0 0 4px;
+  box-shadow: 1px 3px 0 0 #111;
+}
+.cross.left::before {
+  border-right: 12px solid rgba(0, 0, 0, 0.3);
+}
+.cross.right {
+  border-width: 2px 2px 2px 0;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 3px 3px 0 0 #111;
+}
+.cross.right::before {
+  border-left: 12px solid rgba(0, 0, 0, 0.3);
+}
+
+button.cross:active {
+  box-shadow: none;
+  transform: scaleX(1.1);
+}

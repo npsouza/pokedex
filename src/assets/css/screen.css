@@ -1,0 +1,121 @@
+.screen-border {
+  width: 80%;
+  height: 250px;
+  background: #fff;
+  padding: 0 20px;
+  position: relative;
+  border-radius: 10px;
+  border: var(--main-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-border::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  left: -27px;
+  width: 80px;
+  height: 40px;
+  background: var(--red);
+  border-top: 2px solid #000;
+  transform: rotateZ(45deg);
+}
+
+.screen {
+  flex: 1;
+  background: var(--screen-bg);
+  border-radius: 10px;
+  border: var(--main-border);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
+.screen::before,
+.screen::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.screen::before {
+  background-image: url("../images/pokedex-bg.webp");
+  background-size: 180%;
+  background-position: bottom center;
+  border-radius: 100%;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transition: none;
+}
+
+.on .screen::before {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  border-radius: 0;
+}
+
+.screen::after {
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  box-shadow: inset 6px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.screen-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  margin-left: 10px;
+}
+
+.screen div {
+  z-index: 30;
+}
+
+.pokemon img {
+  width: 55px;
+  margin-top: 50px;
+}
+
+.screen .about {
+  padding: 20px 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.sound-out {
+  position: relative;
+}
+
+.sound-out,
+.sound-out::after,
+.sound-out::before {
+  width: 30px;
+  height: 3px;
+  background: #000;
+}
+.sound-out::after,
+.sound-out::before {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.sound-out::before {
+  top: -6px;
+}
+.sound-out::after {
+  bottom: -6px;
+}

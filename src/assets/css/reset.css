@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "DePixelBreit";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/depixelbreit.woff2") format("woff2"),
+    url("../fonts/depixelbreit.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PokemonSolid";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Pokemon Solid.woff2") format("woff2"),
+    url("../fonts/Pokemon Solid.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: DePixelBreit, sans-serif;
+  position: relative;
+}

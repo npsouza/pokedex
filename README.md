@@ -12,15 +12,16 @@
 
 - [x] Criar layout tampa da Pokedex
 - [x] Adicionar movimento de fechar e abrir Pokedex
-- [ ] Melhorar css dos botões direcionais (usar rotate)
-- [ ] Separar arquivos CSS
-- [ ] Separar arquivos JS
+- [x] Melhorar css dos botões direcionais (usar rotate)
+- [x] Separar arquivos CSS
+- [x] Separar arquivos JS
 
 ## V2.0
 
 - [ ] Carregar Pókemons a partir da API
 - [ ] Direcionais devem navegar entre Pókemons
 - [ ] Display secundário deve exibir nome do Pókemon selecionado
+- [ ] Adicionar créditos
 
 ## V2.1
 

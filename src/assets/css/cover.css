@@ -1,0 +1,57 @@
+.cover {
+  width: 360px;
+  position: absolute;
+  transform-origin: right;
+  left: 0;
+  top: 120px;
+  height: calc(100% - 120px);
+  transition: all 1s ease;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.cover .body {
+  background: var(--red);
+  height: 100%;
+  margin-top: 2px;
+  border: var(--main-border);
+  border-radius: 0 0 10px 10px;
+}
+
+.open .cover {
+  transition: all 1s ease;
+  transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
+    rotateY(180deg);
+}
+
+.cover .arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  border-left: 20px solid #fbd743;
+  position: absolute;
+  top: calc(50% - 60px);
+  left: 2px;
+  opacity: 1;
+  transition: all 0.3s ease;
+  transition-delay: 0.3s;
+}
+
+.open .cover .arrow,
+.open .cover .bevel {
+  opacity: 0;
+  transition-delay: 0.3s;
+}
+
+.cover .bevel {
+  width: 200px;
+  height: 15px;
+  border-radius: 30px;
+  box-shadow: var(--inner-shadow);
+  border: var(--main-border);
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 100px);
+  transition-delay: 0.3s;
+}

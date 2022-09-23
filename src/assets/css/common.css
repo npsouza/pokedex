@@ -1,0 +1,32 @@
+:root {
+  --red: #d30a40;
+  --dark-red: #a2052f;
+  --red-light: #e4373e;
+  --yellow-light: #fecb65;
+  --green-light: #32ca64;
+  --screen-bg: #98cb98;
+  --off-light: #334633;
+  --button-bg: #2c2c2c;
+  --main-border: 2px solid #000;
+  --inner-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+button {
+  cursor: pointer;
+}
+
+.shine::before {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 30%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 100%;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+.hidden {
+  display: none !important;
+}
