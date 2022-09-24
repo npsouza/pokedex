@@ -1,10 +1,10 @@
-@import "./reset.css";
-@import "./common.css";
-@import "./cover.css";
-@import "./leds.css";
-@import "./cross-button.css";
-@import "./screen.css";
-@import "./mini-display.css";
+@import "./_reset.css";
+@import "./_common.css";
+@import "./_cover.css";
+@import "./_leds.css";
+@import "./_cross-button.css";
+@import "./_screen.css";
+@import "./_mini-display.css";
 
 main {
   background: #7ac8f5;
